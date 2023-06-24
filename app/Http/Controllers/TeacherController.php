@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class AdminController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $admins = Admin::all();
-        return response()->json($admins);
+        //
     }
 
     /**
@@ -30,19 +29,18 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $admin =  Admin::create([
+        $teacher =  Teacher::create([
             'name'=> $request->name,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
         ]);
-        return response()->json($admin, 201);
-        
+        return response()->json($teacher, 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Admin $admin)
+    public function show(Teacher $teacher)
     {
         //
     }
@@ -50,7 +48,7 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Admin $admin)
+    public function edit(Teacher $teacher)
     {
         //
     }
@@ -58,7 +56,7 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Admin $admin)
+    public function update(Request $request, Teacher $teacher)
     {
         //
     }
@@ -66,7 +64,7 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Admin $admin)
+    public function destroy(Teacher $teacher)
     {
         //
     }
